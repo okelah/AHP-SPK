@@ -76,7 +76,7 @@ public class Hasil extends javax.swing.JFrame {
         jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
 
-        jLabel2.setText("Jumlah Penduduk :");
+        jLabel2.setText("Jumlah Pelamar :");
         jToolBar2.add(jLabel2);
 
         jml_ktr.setText("0");
@@ -115,7 +115,7 @@ public class Hasil extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        conn.simpanData("delete from tblpenrima where nokk=nokk");
+        conn.simpanData("delete from tblpenrima where noktp=noktp");
         for (int i = 0; i < jTable1.getRowCount(); i++) {
             if (jTable1.getValueAt(i, 0) != null) {
                 conn.simpanData("insert into tblpenrima value('" + jTable1.getValueAt(i, 2) + "')");
@@ -186,9 +186,9 @@ public class Hasil extends javax.swing.JFrame {
             tb.addColumn("NoKTP");
             tb.addColumn("Alamat");
             try {
-                ResultSet rs = conn.ambilData("select * from tbl_kriteria_penduduk");
+                ResultSet rs = conn.ambilData("select * from tbl_kriteria_pelamar");
                 if (rs.next()) {
-                    ResultSet Rename = conn.ambilData("select kriteria from vpenduduk group by kriteria order by no asc");
+                    ResultSet Rename = conn.ambilData("select kriteria from vpelamar group by kriteria order by no asc");
                     while (Rename.next()) {
                         tb.addColumn(Rename.getString(1).replace("_", " "));
                     }
@@ -204,7 +204,7 @@ public class Hasil extends javax.swing.JFrame {
         public void tampil() {
             try {
 
-                ResultSet rs = conn.ambilData("select * from tbl_kriteria_penduduk");
+                ResultSet rs = conn.ambilData("select * from tbl_kriteria_pelamar");
                 if (rs.next()) {
                     ResultSet Rename = conn.ambilData("call tampil_hasil()");
                     for (int i = 0; Rename.next(); i++) {

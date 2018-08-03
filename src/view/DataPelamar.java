@@ -69,7 +69,7 @@ public class DataPelamar extends javax.swing.JFrame {
         jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
 
-        jLabel2.setText("Jumlah Penduduk :");
+        jLabel2.setText("Jumlah Pelamar :");
         jToolBar2.add(jLabel2);
 
         jml_ktr.setText("0");

@@ -79,7 +79,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Jumlah Penduduk :"/>
+            <Property name="text" type="java.lang.String" value="Jumlah Pelamar :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jml_ktr">
